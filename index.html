@@ -1,0 +1,202 @@
+<html>
+  <head>
+    <script src="https://cloudflare.com"></script>
+  </head>
+  <body>
+    <canvas id="myProject"></canvas>
+    <script type="application/processing" data-processing-target="myProject">
+      var redColor = false;
+      var orangeColor = false;
+      var yellowColor = false;
+      var greenColor = false;
+      var blueColor = false;
+      var purpleColor = false;
+      var whiteColor = false;
+      var mass = 20;
+      draw = function() {
+          
+          //thickness box
+          fill(0, 0, 0);
+          rect(70,0,230,60);
+          
+          //thickness variation (small)
+          fill(255, 255, 255);
+          rect(90,20,20,20);
+          
+          //thickness variation (medium)
+          fill(255, 255, 255);
+          rect(130,10,40,40);
+          
+          //thickness variation (large)
+          fill(255, 255, 255);
+          rect(200,0,60,60);
+          
+          noStroke();
+          
+          //palet
+          fill(189, 158, 34);
+          rect(300,0,100,400);
+          
+          //eraseer box
+          fill(224, 224, 224);
+          rect(0,0,70,60);
+          fill(255, 255, 255);
+          textSize(20);
+          text("erase",9,24);
+          
+          
+          
+          
+          
+          //colors
+          fill(255, 0, 0);
+          rect(325,40,50,50);
+          fill(255, 136, 0);
+          rect(325,100,50,50);
+          fill(255, 255, 0);
+          rect(325,160,50,50);
+          fill(53, 130, 19);
+          rect(325,220,50,50);
+          fill(0, 64, 255);
+          rect(325,280,50,50);
+          fill(128, 0, 255);
+          rect(325,340,50,50);
+          
+          //make it turn red!
+          if(mouseX > 324 && mouseX < 376 && mouseY > 39 && mouseY < 81 && mouseIsPressed){
+              fill(255, 0, 0);
+              redColor = true;
+          }
+          if(redColor){
+              fill(255, 0, 0);
+              redColor = true;
+              orangeColor = false;
+              yellowColor = false;
+              greenColor = false;
+              blueColor = false;
+              purpleColor = false;
+              whiteColor = false;
+          }
+          
+          //make it turn orange!
+          if(mouseX > 324 && mouseX < 376 && mouseY > 99 && mouseY < 151 && mouseIsPressed){
+              fill(255, 0, 0);
+              orangeColor = true;
+          }
+          if(orangeColor){
+              fill(255, 136, 0);
+              redColor = false;
+              orangeColor = true;
+              yellowColor = false;
+              greenColor = false;
+              blueColor = false;
+              purpleColor = false;
+              whiteColor = false;
+          }
+          
+          //make it turn yellow!
+          if(mouseX > 324 && mouseX < 376 && mouseY > 159 && mouseY < 211 && mouseIsPressed){
+              fill(255, 0, 0);
+              yellowColor = true;
+          }
+          if(yellowColor){
+              fill(255, 255, 0);
+              redColor = false;
+              orangeColor = false;
+              yellowColor = true;
+              greenColor = false;
+              blueColor = false;
+              purpleColor = false;
+              whiteColor = false;
+          }
+          
+          //make it turn green!
+          if(mouseX > 324 && mouseX < 376 && mouseY > 219 && mouseY < 271 && mouseIsPressed){
+              fill(255, 0, 0);
+              greenColor = true;
+          }
+          if(greenColor){
+              fill(53, 130, 19);
+              redColor = false;
+              orangeColor = false;
+              yellowColor = false;
+              greenColor = true;
+              blueColor = false;
+              purpleColor = false;
+              whiteColor = false;
+          }
+          //make it turn blue!
+          if(mouseX > 324 && mouseX < 376 && mouseY > 279 && mouseY < 331 && mouseIsPressed){
+              fill(255, 0, 0);
+              blueColor = true;
+          }
+          if(blueColor){
+              fill(0, 64, 255);
+              redColor = false;
+              orangeColor = false;
+              yellowColor = false;
+              greenColor = false;
+              blueColor = true;
+              purpleColor = false;
+              whiteColor = false;
+          }
+          
+          //make it turn purple!
+          if(mouseX > 324 && mouseX < 376 && mouseY > 339 && mouseY < 391 && mouseIsPressed){
+              fill(255, 0, 0);
+              purpleColor = true;
+          }
+          if(purpleColor){
+              fill(128, 0, 255);
+              redColor = false;
+              orangeColor = false;
+              yellowColor = false;
+              greenColor = false;
+              blueColor = false;
+              purpleColor = true;
+              whiteColor = false;
+              
+          }
+          
+          //make an eraser!
+          if(mouseX > -1 && mouseX < 71 && mouseY > -1 && mouseY < 61 && mouseIsPressed){
+              fill(255, 0, 0);
+              whiteColor = true;
+          }
+          if(whiteColor){
+              fill(255, 255, 255);
+              redColor = false;
+              orangeColor = false;
+              yellowColor = false;
+              greenColor = false;
+              blueColor = false;
+              purpleColor = false;
+              whiteColor = true;
+          }
+          
+          //thickness (small)
+          if(mouseX > 89 && mouseX < 109 && mouseY > 19 && mouseY < 41 && mouseIsPressed){
+              
+              mass = 20;
+          }
+          
+          //thickness (medium)
+          if(mouseX > 129 && mouseX < 171 && mouseY > 9 && mouseY < 51 && mouseIsPressed){
+              
+              mass = 40;
+          }
+          
+          //thickness (large)
+          if(mouseX > 199 && mouseX < 261 && mouseY > -1 && mouseY < 61 && mouseIsPressed){
+              
+              mass = 60;
+          }
+          
+          //DO NOT TOUCH THIS VITAL CODE (it makes the draw part of drawing)
+          if(mouseIsPressed){
+              ellipse(mouseX,mouseY,mass,mass);
+          }
+      };
+    </script>
+  </body>
+</html>

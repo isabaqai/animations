@@ -21,6 +21,7 @@
   <canvas id="myProject" width="400" height="400"></canvas>
   <script type="application/processing" data-processing-target="myProject">
 
+    background(255,255,255);
   var redColor = false;
   var orangeColor = false;
   var yellowColor = false;
@@ -31,9 +32,7 @@
     
   var mass = 20;
 
-  void setup() {
-    size(400, 400);
-  }
+  size(400, 400);
   
     draw = function() {
     
@@ -86,7 +85,7 @@
     rect(325,340,50,50);
     
     //make it turn red!
-    if(mouseX > 324 && mouseX < 376 && mouseY > 39 && mouseY < 81 && mouseIsPressed){
+    if(mouseX > 324 && mouseX < 376 && mouseY > 39 && mouseY < 81 && mousePressed){
         fill(255, 0, 0);
         redColor = true;
     }
@@ -102,7 +101,7 @@
     }
     
     //make it turn orange!
-    if(mouseX > 324 && mouseX < 376 && mouseY > 99 && mouseY < 151 && mouseIsPressed){
+    if(mouseX > 324 && mouseX < 376 && mouseY > 99 && mouseY < 151 && mousePressed){
         fill(255, 0, 0);
         orangeColor = true;
     }
@@ -118,7 +117,7 @@
     }
     
     //make it turn yellow!
-    if(mouseX > 324 && mouseX < 376 && mouseY > 159 && mouseY < 211 && mouseIsPressed){
+    if(mouseX > 324 && mouseX < 376 && mouseY > 159 && mouseY < 211 && mousePressed){
         fill(255, 0, 0);
         yellowColor = true;
     }
@@ -134,7 +133,7 @@
     }
     
     //make it turn green!
-    if(mouseX > 324 && mouseX < 376 && mouseY > 219 && mouseY < 271 && mouseIsPressed){
+    if(mouseX > 324 && mouseX < 376 && mouseY > 219 && mouseY < 271 && mousePressed){
         fill(255, 0, 0);
         greenColor = true;
     }
@@ -149,7 +148,7 @@
         whiteColor = false;
     }
     //make it turn blue!
-    if(mouseX > 324 && mouseX < 376 && mouseY > 279 && mouseY < 331 && mouseIsPressed){
+    if(mouseX > 324 && mouseX < 376 && mouseY > 279 && mouseY < 331 && mousePressed){
         fill(255, 0, 0);
         blueColor = true;
     }
@@ -165,7 +164,7 @@
     }
     
     //make it turn purple!
-    if(mouseX > 324 && mouseX < 376 && mouseY > 339 && mouseY < 391 && mouseIsPressed){
+    if(mouseX > 324 && mouseX < 376 && mouseY > 339 && mouseY < 391 && mousePressed){
         fill(255, 0, 0);
         purpleColor = true;
     }
@@ -182,7 +181,7 @@
     }
     
     //make an eraser!
-    if(mouseX > -1 && mouseX < 71 && mouseY > -1 && mouseY < 61 && mouseIsPressed){
+    if(mouseX > -1 && mouseX < 71 && mouseY > -1 && mouseY < 61 && mousePressed){
         fill(255, 0, 0);
         whiteColor = true;
     }
@@ -198,19 +197,19 @@
     }
     
     //thickness (small)
-    if(mouseX > 89 && mouseX < 109 && mouseY > 19 && mouseY < 41 && mouseIsPressed){
+    if(mouseX > 89 && mouseX < 109 && mouseY > 19 && mouseY < 41 && mousePressed){
         
         mass = 20;
     }
     
     //thickness (medium)
-    if(mouseX > 129 && mouseX < 171 && mouseY > 9 && mouseY < 51 && mouseIsPressed){
+    if(mouseX > 129 && mouseX < 171 && mouseY > 9 && mouseY < 51 && mousePressed){
         
         mass = 40;
     }
     
     //thickness (large)
-    if(mouseX > 199 && mouseX < 261 && mouseY > -1 && mouseY < 61 && mouseIsPressed){
+    if(mouseX > 199 && mouseX < 261 && mouseY > -1 && mouseY < 61 && mousePressed){
         
         mass = 60;
     }
@@ -218,7 +217,7 @@
     
     //DO NOT TOUCH THIS VITAL CODE (it makes the draw part of drawing)
     
-    if(mouseIsPressed){
+    if(mousePressed){
         ellipse(mouseX,mouseY,mass,mass);
     }
 };
